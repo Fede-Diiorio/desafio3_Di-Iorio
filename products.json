@@ -79,5 +79,14 @@
     "thumbnail": "./ssd240.webp",
     "code": "abc131",
     "stock": 20
+  },
+  {
+    "id": 10,
+    "title": "Placa De Video MSI GTX1630",
+    "description": "Placa de video MSI GTX1630 Ventus 4gb gGDDR6 doble ventilador 1 displayPort 1 HDMI 1 DVI-D XS OC edition. No rquiere alimentación externa.",
+    "price": 200000,
+    "thumbnail": "./gtx1630.webp",
+    "code": "abc132",
+    "stock": 5
   }
 ]
