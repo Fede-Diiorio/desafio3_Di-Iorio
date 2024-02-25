@@ -1,5 +1,4 @@
 const fs = require('fs');
-const products = require('./sysPc_DB');
 
 class ProductManager {
 
@@ -121,15 +120,4 @@ class ProductManager {
     }
 }
 
-const main = async () => {
-    const manager = new ProductManager('./products.json');
-
-    for (const product of products) {
-        const { name, description, price, img, code, stock } = product;
-        await manager.addProduct(name, description, price, img, code, stock);
-    }
-
-    console.log(await manager.getProducts());
-}
-
-main();
+module.exports = ProductManager;
