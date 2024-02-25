@@ -5,7 +5,6 @@ const app = express();
 
 const main = async () => {
     const products = await manager.getProducts();
-    manager.addProduct('Placa De Video MSI GTX1630', 'Placa de video MSI GTX1630 Ventus 4gb gGDDR6 doble ventilador 1 displayPort 1 HDMI 1 DVI-D XS OC edition. No rquiere alimentación externa.', 200000, './gtx1630.webp', 'abc132', 5);
 
     app.get('/products', (req, res) => {
         const limitFilter = req.query.limit;
@@ -19,7 +18,13 @@ const main = async () => {
         }
     });
 
-    app.listen(3000, () => {
+    app.get('/products/:id', (req, res) => {
+        const productId = parseInt(req.params.id);
+        const product = products.find(prod => prod.id === productId);
+        product ? res.json(product) : res.json('El producto no existe');
+    })
+
+    app.listen(8080, () => {
         console.log('Server Listo!');
     });
 }
