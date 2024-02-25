@@ -1,9 +1,10 @@
 const ProductManager = require('./ProductManager');
-const manager = new ProductManager('../products.json')
+
 const express = require('express');
 const app = express();
 
 const main = async () => {
+    const manager = new ProductManager('../products.json')
     const products = await manager.getProducts();
 
     app.get('/products', (req, res) => {
@@ -18,9 +19,9 @@ const main = async () => {
         }
     });
 
-    app.get('/products/:id', (req, res) => {
+    app.get('/products/:id', async (req, res) => {
         const productId = parseInt(req.params.id);
-        const product = products.find(prod => prod.id === productId);
+        const product = await manager.getProductById(productId);
         product ? res.json(product) : res.json('El producto no existe');
     })
 
