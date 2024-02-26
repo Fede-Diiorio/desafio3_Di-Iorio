@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 const main = async () => {
-    const manager = new ProductManager('./products.json')
+    const manager = new ProductManager('../products.json')
     const products = await manager.getProducts();
 
     app.get('/products', (req, res) => {
