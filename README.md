@@ -7,6 +7,7 @@ Este proyecto fue creado con el fin de cumplir con los requisitos del desafío e
 ## Correr de manera local
 ```bash
 $ git clone https://github.com/Fede-Diiorio/desafio3_Di-Iorio.git
+$ cd desafio3_Di-Iorio
 $ npm install
 $ cd src
 $ nodemon app
